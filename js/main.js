@@ -21,12 +21,12 @@ function GPU_COMPATIBLE(elementos) {
     }
 }
 function CPU_COMPATIBLE(elemento){
-    if ((elementos.replace(/[0-9]+/g, "")) == "RYZEN") {
-        if ((elementos.replace(/[^0-9]+/g, "")) >= "5") {
+    if ((elemento.replace(/[0-9]+/g, "")) == "RYZEN") {
+        if ((elemento.replace(/[^0-9]+/g, "")) >= "5") {
             return true
         }
-    } else if ((elementos.replace(/[0-9]+/g, "")) == "INTEL") {
-        if ((elementos.replace(/[^0-9]+/g, "")) >= "i5") {
+    } else if ((elemento.replace(/[0-9]+/g, "")) == "INTEL") {
+        if ((elemento.replace(/[^0-9]+/g, "")) >= "i5") {
             return true
         }
 }
