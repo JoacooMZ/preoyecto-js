@@ -20,14 +20,26 @@ function GPU_COMPATIBLE(elementos) {
         }
     }
 }
-function CPU_COMPATIBLE(elemento) {
-
+function CPU_COMPATIBLE(elemento){
+    if ((elementos.replace(/[0-9]+/g, "")) == "RYZEN") {
+        if ((elementos.replace(/[^0-9]+/g, "")) >= "5") {
+            return true
+        }
+    } else if ((elementos.replace(/[0-9]+/g, "")) == "INTEL") {
+        if ((elementos.replace(/[^0-9]+/g, "")) >= "i5") {
+            return true
+        }
 }
-let componente = prompt("ingrese modelo de su GPU(ejemplo GTX1060 ) o 'salir' para salir ")
+}
+let componente = prompt("ingrese modelo de su GPU(ejemplo RX570-GTX1060 ) o 'salir' para salir ")
 while (componente!='salir'){
     if (GPU_COMPATIBLE(componente)) {
-        alert("GPU")
-    
+        alert("GPU CORRECTA")
+
+
+    if (CPU_COMPATIBLE(compatible)){
+        alert("CPU CORRECTA")
+    }
     }
 }
 
