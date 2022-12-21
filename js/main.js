@@ -1,47 +1,102 @@
+//variables globales
+let nombre= prompt("ingrese su nombre");
+let edad= prompt("ingrese su edad");
+let nacionalidad= prompt("ingrese su nacionalidad");
 
-const warzone = {
-    GPU_AMD: "RX570",
-    GPU_NVIDIA: "GTX1060",
-    CPU_INTEL: "i59400f",
-    CPU_AMD: "ryzen 5 3400"
+let entrada=prompt("presione ENTER para continuar o ESC para salir");
+
+//arrays
+let usurarios=[]
+let componentes=[]
+let juegos=[]
 
 
 
+
+//clases
+class usurario {
+    constructor (nombre,edad,nacionalidad){
+        this.nombre=nombre;
+        this.edad=edad;
+        this.nacionalidad=nacionalidad;
+
+    }
+    
 }
 
-function GPU_COMPATIBLE(elementos) {
-    if ((elementos.replace(/[0-9]+/g, "")) == "RX") {
-        if ((elementos.replace(/[^0-9]+/g, "")) >= "570") {
-            return true
-        }
-    } else if ((elementos.replace(/[0-9]+/g, "")) == "GTX") {
-        if ((elementos.replace(/[^0-9]+/g, "")) >= "1060") {
-            return true
-        }
+class pc { 
+    constructor(CPU,GRAFICA) {
+    this.CPU=CPU;
+    this.GRAFICA=GRAFICA;
+}
+}
+
+class juego {
+    constructor (nombre,GPU,CPU) {
+        this.CPU=CPU
+        this.GPU=GPU
+        this.nombre=nombre
     }
 }
-function CPU_COMPATIBLE(elemento){
-    if ((elemento.replace(/[0-9]+/g, "")) == "RYZEN") {
-        if ((elemento.replace(/[^0-9]+/g, "")) >= "5") {
-            return true
-        }
-    } else if ((elemento.replace(/[0-9]+/g, "")) == "INTEL") {
-        if ((elemento.replace(/[^0-9]+/g, "")) >= "i5") {
-            return true
-        }
-}
-}
-let componente = prompt("ingrese modelo de su GPU(ejemplo RX570-GTX1060 ) o 'salir' para salir ")
-while (componente!='salir'){
-    if (GPU_COMPATIBLE(componente)) {
-        alert("GPU CORRECTA")
+
+//creacion de objetos
+juego1=new juego ("warzone", "nvidia2060","i59400f")
+juego2=new juego ("read redemption 2", "rx5600","ryzen5")
+juego3=new juego ("god of war", "rtx1070","i3")
+usuario1=new usurario (nombre,edad,nacionalidad);
 
 
-    if (CPU_COMPATIBLE(compatible)){
-        alert("CPU CORRECTA")
+//se hizo el push
+juegos.push(juego1)
+juegos.push(juego2)
+juegos.push(juego3)
+usurarios.push(usuario1);
+
+completarDatosParaTuPc(entrada);
+
+function completarDatosParaTuPc(entrada){
+    while (entrada != "ESC") {
+        alert("datos de tu pc, para salir poner ESC")
+        let cpuusurario=prompt ("ingrese su cpu ejemplo (ryzen 5 o intel i5)")
+        let graficausuraio= prompt ("ingrese su grafica ejemplo (gtx 1060 o rx 570")
+        pedirjuego(usuario1,cpuusurario,graficausuraio)
+    entrada=prompt("escriba ESC para salir")
     }
+
+
+}
+
+function pedirjuego(usuario,CPU,GRAFICA){
+  let juego=prompt("ingrese el nombre del juego")
+  evaluarjuego(juego,CPU,GRAFICA)
+
+    
+}
+
+function evaluarjuego(juego,CPU,GRAFICA){
+    const juegoencontrado=juegos.find((juegobuscado)=>juegobuscado.nombre===juego)
+    comparativa(juegoencontrado,CPU,GRAFICA)
+}
+
+
+function comparativa(juego,CPU,GRAFICA){
+    if(juego.CPU==CPU &&juego.GPU==GRAFICA){
+        alert(usuario1.nombre + "tu pc te lo corre :)")
+    }
+    else{
+        alert(usuario1.nombre + "tu pc no te lo corre :(")
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
