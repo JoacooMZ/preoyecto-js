@@ -2,13 +2,7 @@
 let nombre= prompt("ingrese su nombre");
 let edad= prompt("ingrese su edad");
 let nacionalidad= prompt("ingrese su nacionalidad");
-
 let entrada=prompt("presione ENTER para continuar o ESC para salir");
-
-//arrays
-let usurarios=[]
-let componentes=[]
-let juegos=[]
 
 
 
@@ -29,8 +23,8 @@ class pc {
     this.CPU=CPU;
     this.GRAFICA=GRAFICA;
 }
-}
 
+}
 class juego {
     constructor (nombre,GPU,CPU) {
         this.CPU=CPU
@@ -38,19 +32,6 @@ class juego {
         this.nombre=nombre
     }
 }
-
-//creacion de objetos
-juego1=new juego ("warzone", "nvidia2060","i59400f")
-juego2=new juego ("read redemption 2", "rx5600","ryzen5")
-juego3=new juego ("god of war", "rtx1070","i3")
-usuario1=new usurario (nombre,edad,nacionalidad);
-
-
-//se hizo el push
-juegos.push(juego1)
-juegos.push(juego2)
-juegos.push(juego3)
-usurarios.push(usuario1);
 
 completarDatosParaTuPc(entrada);
 
@@ -87,10 +68,6 @@ function comparativa(juego,CPU,GRAFICA){
         alert(usuario1.nombre + "tu pc no te lo corre :(")
     }
 }
-
-
-
-
 
 
 
