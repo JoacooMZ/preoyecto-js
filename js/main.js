@@ -5,8 +5,6 @@ let nacionalidad= prompt("ingrese su nacionalidad");
 let entrada=prompt("presione ENTER para continuar o ESC para salir");
 
 
-
-
 //clases
 class usurario {
     constructor (nombre,edad,nacionalidad){
@@ -32,6 +30,30 @@ class juego {
         this.nombre=nombre
     }
 }
+
+
+
+//arrays
+let usurarios=[]
+let componentes=[]
+let juegos=[]
+
+
+
+//creacion de objetos
+juego1=new juego ("warzone", "nvidia2060","i59400f")
+juego2=new juego ("read redemption 2", "rx5600","ryzen5")
+juego3=new juego ("god of war", "rtx1070","i3")
+usuario1=new usurario (nombre,edad,nacionalidad);
+
+
+//se hizo el push
+juegos.push(juego1)
+juegos.push(juego2)
+juegos.push(juego3)
+usurarios.push(usuario1);
+
+
 
 completarDatosParaTuPc(entrada);
 
