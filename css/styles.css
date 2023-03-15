@@ -3,3 +3,24 @@ h1{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
+.imgwz{
+display: block;
+margin-right: auto;
+width: 30%;
+}
+.imggow{
+display: block;
+margin-right: auto;
+width: 30%;
+}
+.imgrr2{
+    display: block;
+margin-right: auto;
+width: 30%;
+}
+p{
+    color: black;
+    background-color: brown;
+    text-align: left;
+    font-size: x-large;
+}
