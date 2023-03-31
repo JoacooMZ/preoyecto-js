@@ -30,7 +30,7 @@ btn.addEventListener("click", () => {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Something went wrong!',
+          text: 'creo que no se pudo obtener el clima!',
           footer: '<a href="">consultalo con tu clima de confianza</a>'
         })
       })
